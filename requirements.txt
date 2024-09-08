@@ -9,3 +9,8 @@ pylint==2.15.3
 #web
 #fastapi==0.85.0
 #uvicorn==0.18.3
+
+pandas
+seaborn
+matplotlib
+ydata-profiling
