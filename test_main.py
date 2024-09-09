@@ -2,6 +2,7 @@ from main import read_dataset, generate_html_report, generate_summary_statistics
 import os
 import pandas as pd
 
+
 def test_read():
     df = read_dataset('titanic.csv')
     assert type(df) == pd.DataFrame
@@ -47,7 +48,7 @@ def test_visualization():
 
 def test_report():
     file_path = 'titanic.csv'
-    df = read_dataset(file_path)  
+    df = read_dataset(file_path)
     generate_html_report(df, "Titanic Profiling Report")
     assert os.path.isfile("Titanic Profiling Report.html")
 
