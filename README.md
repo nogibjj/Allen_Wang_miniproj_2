@@ -81,9 +81,9 @@ The Python script in `main.py` can perform the following:
 
 ### 3. **Data Visualization**:
    The script creates a histogram for the numeric columns in the dataset.
-    ![Alt text](age.png)
-    ![Alt text](fare.png)
-    ![Alt text](class.png)
+    ![Alt text](output/Age_distribution.png)
+    ![Alt text](output/Fare_distribution.png)
+    ![Alt text](output/Pclass_distribution.png)
     
 
 
