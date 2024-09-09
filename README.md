@@ -1,10 +1,16 @@
-# Allen_Wang_miniproj_1
+# Allen_Wang_miniproj_2
 
-[![CI](https://github.com/nogibjj/Allen_Wang_miniproj_1/actions/workflows/CICD.yml/badge.svg)](https://github.com/nogibjj/Allen_Wang_miniproj_1/actions/workflows/CICD.yml)
+[![CI](https://github.com/nogibjj/Allen_Wang_miniproj_2/actions/workflows/CICD.yml/badge.svg)](https://github.com/nogibjj/Allen_Wang_miniproj_2/actions/workflows/CICD.yml)
 
 ## Overview
 
-This project includes a Python development environment configured with a `.devcontainer`, a `Makefile` for managing setup, testing, and linting tasks, and a functioning CI/CD pipeline. The main functionality of the project is to print a string in reverse.
+This project includes a Python development environment configured with a `.devcontainer`, a `Makefile` for managing setup, testing, and linting tasks, and a functioning CI/CD pipeline.  The project reads a dataset (CSV or Excel), generates summary statistics, and creates basic data visualizations for the dataset columns.
+
+## Features
+- **Descriptive Statistics**: A Python script that:
+  - Reads a dataset (CSV or Excel).
+  - Generates summary statistics including mean, median, and standard deviation for numeric columns.
+  - Creates a histogram for data visualization.
 
 ## Project Structure
 
@@ -21,7 +27,7 @@ This project includes a Python development environment configured with a `.devco
 
 - **.github/workflows/ci.yml**: Configures CI/CD pipeline to automatically run setup, linting, and tests.
 
-- **main.py**: Contains a function that prints a string in reverse.
+- **main.py**: A script for reading a dataset, calculating summary statistics, and generating data visualizations.
 
 - **README.md**: This file, providing setup and usage instructions.
 
@@ -58,3 +64,26 @@ This project includes a Python development environment configured with a `.devco
     make test
     ```
    ![Alt text](test.png)
+
+## Data Analysis Script
+
+The Python script in `main.py` can perform the following:
+
+### 1. **Read a Dataset**:
+   It reads a dataset from a CSV or Excel file.
+
+### 2. **Generate Summary Statistics**:
+   For each numeric column, the script generates:
+   - Mean
+   - Median
+   - Standard Deviation
+    ![Alt text](summary.png)
+
+### 3. **Data Visualization**:
+   The script creates a histogram for the numeric columns in the dataset.
+    ![Alt text](age.png)
+    ![Alt text](fare.png)
+    ![Alt text](class.png)
+    
+
+
