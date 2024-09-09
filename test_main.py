@@ -3,12 +3,14 @@ import os
 import pandas as pd
 
 
-def test_read(file_path):
-    df = read_dataset(file_path)
+def test_read():
+    df = read_dataset('titanic.csv')
     assert type(df) == pd.DataFrame
 
 
-def test_summary(df):
+def test_summary():
+    file_path = 'titanic.csv'
+    df = read_dataset(file_path)
     summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(
         df)
     # those testing mean, median, std value come from excel function
@@ -35,21 +37,24 @@ def test_summary(df):
     assert (std_dev['Fare']-49.7820404) <= 10**(-6)
 
 
-def test_visulaization(df):
+def test_visualization():
+    file_path = 'titanic.csv'
+    df = read_dataset(file_path)
     for column in df.columns:
         column_name = column.replace("/", "_")
         create_save_visualization(df, column, column_name+"_distribution.png")
         assert os.path.isfile(column_name+"_distribution.png")
 
 
-def test_report(df):
+def test_report():
+    file_path = 'titanic.csv'
+    df = read_dataset(file_path)  
     generate_html_report(df, "Titanic Profiling Report")
     assert os.path.isfile("Titanic Profiling Report.html")
 
 
 if __name__ == "__main__":
-    test_read('titanic.csv')
-    df = read_dataset('titanic.csv')
-    test_summary(df)
-    test_visulaization(df)
-    test_report(df)
+    test_read()
+    test_summary()
+    test_visualization()
+    test_report()
