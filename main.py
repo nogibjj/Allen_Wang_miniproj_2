@@ -22,8 +22,8 @@ def generate_summary_statistics(df):
     return summary_stats, mean_values, median_values, std_dev
 
 
-def create_save_visualization(df, column_name, save_filename=None):
-    sns.set(style="whitegrid")
+def create_save_visualization(df, column_name, save_filename=None, show=False):
+    sns.set_theme(style="whitegrid")
     plt.figure(figsize=(8, 6))
     sns.histplot(df[column_name], kde=True, color='skyblue', bins=30)
     plt.title(f'{column_name} Distribution', fontsize=16)
@@ -32,15 +32,16 @@ def create_save_visualization(df, column_name, save_filename=None):
 
     if save_filename:
         plt.savefig(save_filename, bbox_inches='tight')
-    plt.show()
+    if show:
+        plt.show()
 
 
-def generate_html_report(df):
+def generate_html_report(df,title):
     profile = ProfileReport(
-        df, title='Titanic Profiling Report', explorative=True)
-    profile.to_file('Titanic Profiling Report.html')
+        df, title=title, explorative=True)
+    profile.to_file(title+'.html')
 
-
+"""
 file_path = 'titanic.csv'
 df = read_dataset(file_path)
 summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(
@@ -71,4 +72,5 @@ create_save_visualization(df, 'Parents/Children Aboard',
 create_save_visualization(df, 'Fare', save_filename='fare_distribution.png')
 
 
-generate_html_report(df)
+generate_html_report(df,"Titanic Profiling Report")
+"""
