@@ -36,41 +36,7 @@ def create_save_visualization(df, column_name, save_filename=None, show=False):
         plt.show()
 
 
-def generate_html_report(df,title):
+def generate_html_report(df, title):
     profile = ProfileReport(
         df, title=title, explorative=True)
     profile.to_file(title+'.html')
-
-"""
-file_path = 'titanic.csv'
-df = read_dataset(file_path)
-summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(
-    df)
-
-print("Summary Statistics:", summary_stats)
-print("---------")
-print("Mean Values:")
-print(mean_values)
-print("---------")
-print("Median Values:")
-print(median_values)
-print("---------")
-print("Standard Deviation")
-print(std_dev)
-
-
-create_save_visualization(df, 'Age', save_filename='age_distribution.png')
-create_save_visualization(
-    df, 'Survived', save_filename='survived_distribution.png')
-create_save_visualization(
-    df, 'Pclass', save_filename='pclass_distribution.png')
-create_save_visualization(df, 'Sex', save_filename='sex_distribution.png')
-create_save_visualization(df, 'Siblings/Spouses Aboard',
-                          save_filename='Siblings_Spouses_Aboard_distribution.png')
-create_save_visualization(df, 'Parents/Children Aboard',
-                          save_filename='Parents_Children_Aboard_distribution.png')
-create_save_visualization(df, 'Fare', save_filename='fare_distribution.png')
-
-
-generate_html_report(df,"Titanic Profiling Report")
-"""
