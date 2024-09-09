@@ -1,7 +1,7 @@
 from main import read_dataset, generate_html_report, generate_summary_statistics, create_save_visualization
 import os
 import pandas as pd
-
+import matplotlib
 
 def test_read():
     df = read_dataset('titanic.csv')
