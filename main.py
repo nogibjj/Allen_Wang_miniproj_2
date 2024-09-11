@@ -6,9 +6,9 @@ from ydata_profiling import ProfileReport
 
 def read_dataset(file_path):
     df = None
-    if file_path.endswith('.csv'):
+    if file_path.endswith(".csv"):
         df = pd.read_csv(file_path)
-    elif file_path.endswith('.xlsx'):
+    elif file_path.endswith(".xlsx"):
         df = pd.read_excel(file_path)
     return df
 
@@ -25,18 +25,17 @@ def generate_summary_statistics(df):
 def create_save_visualization(df, column_name, save_filename=None, show=False):
     sns.set_theme(style="whitegrid")
     plt.figure(figsize=(8, 6))
-    sns.histplot(df[column_name], kde=True, color='skyblue', bins=30)
-    plt.title(f'{column_name} Distribution', fontsize=16)
+    sns.histplot(df[column_name], kde=True, color="skyblue", bins=30)
+    plt.title(f"{column_name} Distribution", fontsize=16)
     plt.xlabel(column_name, fontsize=12)
-    plt.ylabel('Frequency', fontsize=12)
+    plt.ylabel("Frequency", fontsize=12)
 
     if save_filename:
-        plt.savefig(save_filename, bbox_inches='tight')
+        plt.savefig(save_filename, bbox_inches="tight")
     if show:
         plt.show()
 
 
 def generate_html_report(df, title):
-    profile = ProfileReport(
-        df, title=title, explorative=True)
-    profile.to_file(title+'.html')
+    profile = ProfileReport(df, title=title, explorative=True)
+    profile.to_file(title + ".html")
