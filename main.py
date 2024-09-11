@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from ydata_profiling import ProfileReport
+import html2text
 
 
 def read_dataset(file_path):
@@ -39,3 +40,9 @@ def create_save_visualization(df, column_name, save_filename=None, show=False):
 def generate_html_report(df, title):
     profile = ProfileReport(df, title=title, explorative=True)
     profile.to_file(title + ".html")
+    converter = html2text.HTML2Text()
+    with open(title + ".html", 'r', encoding='utf-8') as file:
+        html_content = file.read()
+    markdown_content = converter.handle(html_content)
+    with open(title + ".md", 'w', encoding='utf-8') as file:
+        file.write(markdown_content)

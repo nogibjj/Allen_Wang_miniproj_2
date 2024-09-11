@@ -16,7 +16,8 @@ def test_read():
 def test_summary():
     file_path = "titanic.csv"
     df = read_dataset(file_path)
-    summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(df)
+    summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(
+        df)
     # those testing mean, median, std value come from excel function
 
     assert (mean_values["Survived"] - 0.385569335) <= 10 ** (-6)
@@ -46,7 +47,8 @@ def test_visualization():
     df = read_dataset(file_path)
     for column in df.columns:
         column_name = column.replace("/", "_")
-        create_save_visualization(df, column, column_name + "_distribution.png")
+        create_save_visualization(
+            df, column, column_name + "_distribution.png")
         assert os.path.isfile(column_name + "_distribution.png")
 
 
@@ -55,6 +57,7 @@ def test_report():
     df = read_dataset(file_path)
     generate_html_report(df, "Titanic Profiling Report")
     assert os.path.isfile("Titanic Profiling Report.html")
+    assert os.path.isfile("Titanic Profiling Report.md")
 
 
 if __name__ == "__main__":
