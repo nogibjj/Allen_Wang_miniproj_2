@@ -41,8 +41,8 @@ def generate_html_report(df, title):
     profile = ProfileReport(df, title=title, explorative=True)
     profile.to_file(title + ".html")
     converter = html2text.HTML2Text()
-    with open(title + ".html", 'r', encoding='utf-8') as file:
+    with open(title + ".html", "r", encoding="utf-8") as file:
         html_content = file.read()
     markdown_content = converter.handle(html_content)
-    with open(title + ".md", 'w', encoding='utf-8') as file:
+    with open(title + ".md", "w", encoding="utf-8") as file:
         file.write(markdown_content)
