@@ -20,7 +20,7 @@ jobs:
       - name: format
         run: make format
       - name: generate files
-        run python test_main.py
+        run: python test_main.py
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
