@@ -9,12 +9,13 @@ import pandas as pd
 
 
 def test_read():
-    df = read_dataset("titanic.csv")
+    df = read_dataset("https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv")
+    #print(df)
     assert type(df) == pd.DataFrame
 
 
 def test_summary():
-    file_path = "titanic.csv"
+    file_path = "https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv"
     df = read_dataset(file_path)
     summary_stats, mean_values, median_values, std_dev = generate_summary_statistics(df)
     # those testing mean, median, std value come from excel function
@@ -42,7 +43,7 @@ def test_summary():
 
 
 def test_visualization():
-    file_path = "titanic.csv"
+    file_path = "https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv"
     df = read_dataset(file_path)
     for column in df.columns:
         column_name = column.replace("/", "_")
@@ -51,7 +52,7 @@ def test_visualization():
 
 
 def test_report():
-    file_path = "titanic.csv"
+    file_path = "https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv"
     df = read_dataset(file_path)
     generate_html_report(df, "Titanic Profiling Report")
     assert os.path.isfile("Titanic Profiling Report.html")
