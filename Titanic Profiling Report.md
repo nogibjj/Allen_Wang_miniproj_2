@@ -8,7 +8,9 @@ Summary:
 | 25%   |   0        |   2        |  20.25   |                  0        |                  0        |   7.925  |
 | 50%   |   0        |   3        |  28      |                  0        |                  0        |  14.4542 |
 | 75%   |   1        |   3        |  38      |                  1        |                  0        |  31.1375 |
-| max   |   1        |   3        |  80      |                  8        |                  6        | 512.329  |Mean:
+| max   |   1        |   3        |  80      |                  8        |                  6        | 512.329  |
+
+Mean:
 |                         |         0 |
 |:------------------------|----------:|
 | Survived                |  0.385569 |
@@ -16,7 +18,9 @@ Summary:
 | Age                     | 29.4714   |
 | Siblings/Spouses Aboard |  0.525366 |
 | Parents/Children Aboard |  0.383315 |
-| Fare                    | 32.3054   |Median:
+| Fare                    | 32.3054   |
+
+Median:
 |                         |       0 |
 |:------------------------|--------:|
 | Survived                |  0      |
@@ -24,7 +28,9 @@ Summary:
 | Age                     | 28      |
 | Siblings/Spouses Aboard |  0      |
 | Parents/Children Aboard |  0      |
-| Fare                    | 14.4542 |Standard Deviation:
+| Fare                    | 14.4542 |
+
+Standard Deviation:
 |                         |         0 |
 |:------------------------|----------:|
 | Survived                |  0.487004 |
