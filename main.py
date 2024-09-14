@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from ydata_profiling import ProfileReport
 
+
 def read_dataset(file_path):
     df = None
     if file_path.endswith(".csv"):
@@ -47,8 +48,8 @@ def generate_report(df, title):
         file.write("Median:\n")
         file.write(median_values.to_markdown())
         file.write("Standard Deviation:\n")
-        file.write(std_dev.to_markdown())       
-        file.write("\n\n")  
+        file.write(std_dev.to_markdown())
+        file.write("\n\n")
         file.write("![image1](Age_distribution.png)\n")
         file.write("\n\n")
         file.write("![image2](Fare_distribution.png)\n")
