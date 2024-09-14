@@ -1,6 +1,6 @@
 from main import (
     read_dataset,
-    generate_html_report,
+    generate_report,
     generate_summary_statistics,
     create_save_visualization,
 )
@@ -62,7 +62,7 @@ def test_report():
         "https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv"
     )
     df = read_dataset(file_path)
-    generate_html_report(df, "Titanic Profiling Report")
+    generate_report(df, "Titanic Profiling Report")
     assert os.path.isfile("Titanic Profiling Report.html")
     assert os.path.isfile("Titanic Profiling Report.md")
 

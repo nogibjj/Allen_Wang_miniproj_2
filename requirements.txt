@@ -14,4 +14,3 @@ pandas
 seaborn
 matplotlib
 ydata-profiling
-html2text
